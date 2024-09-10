@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Redirecting...</title>
+    <script type="text/javascript">
+        // Get the current URL path (everything after the domain)
+        var path = window.location.pathname;
+
+        // If the path is not empty, redirect to the corresponding Browserling URL
+        if (path && path !== '/') {
+            // Remove the leading '/' from the path
+            var trimmedPath = path.substring(1);
+
+            // Build the Browserling URL dynamically
+            var targetUrl = "https://www.browserling.com/browse/win10/chrome127/" + trimmedPath;
+
+            // Redirect to the new URL
+            window.location.href = targetUrl;
+        } else {
+            document.write("Invalid URL. Please provide a valid path.");
+        }
+    </script>
+</head>
+<body>
+    <h1>Redirecting...</h1>
+</body>
+</html>
