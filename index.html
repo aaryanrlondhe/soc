@@ -9,11 +9,10 @@
         // Get the current URL path (everything after the domain)
         var path = window.location.pathname;
 
-        // If the path is not empty, redirect to the corresponding Browserling URL
-        if (path && path !== '/') {
-            // Remove the leading '/' from the path
-            var trimmedPath = path.substring(1);
+        // Remove the leading '/soc/' part (or whatever the repository name is) and handle the path dynamically
+        var trimmedPath = path.replace('/soc/', '');  // Make sure to adjust the path based on your repo name
 
+        if (trimmedPath && trimmedPath !== '/') {
             // Build the Browserling URL dynamically
             var targetUrl = "https://www.browserling.com/browse/win10/chrome127/" + trimmedPath;
 
