@@ -3,24 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Redirecting...</title>
     <script type="text/javascript">
-        // Function to get query parameters from URL
+        // Function to get query parameter by name
         function getQueryParam(param) {
             var urlParams = new URLSearchParams(window.location.search);
             return urlParams.get(param);
         }
 
-        // Get the 'url' query parameter from the URL
+        // Get the 'url' query parameter
         var redirectUrl = getQueryParam('url');
 
-        // If 'url' exists, redirect to the constructed Browserling URL
+        // Redirect if 'url' parameter is provided
         if (redirectUrl) {
-            var targetUrl = "https://www.browserling.com/browse/win10/chrome127/" + redirectUrl;
-            window.location.href = targetUrl;
+            window.location.href = "https://www.browserling.com/browse/win10/chrome127/" + redirectUrl;
         } else {
-            document.write("No URL provided for redirection.");
+            document.write("Error: No URL provided for redirection.");
         }
     </script>
 </head>
